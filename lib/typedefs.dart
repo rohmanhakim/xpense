@@ -1,0 +1,1 @@
+typedef StringCallback = Function(String string);
