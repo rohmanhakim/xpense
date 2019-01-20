@@ -49,7 +49,6 @@ class AddTransactionState extends State<AddTransactionPage> {
     if (_getAmountString().length > 1) {
       _amountString =
           _getAmountString().substring(0, _getAmountString().length - 1);
-      debugPrint("amountstring2: ${_amountString}");
     } else {
       _amountString = "0";
     }
