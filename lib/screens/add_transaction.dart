@@ -35,7 +35,7 @@ class AddTransactionState extends State<AddTransactionPage> {
     );
   }
 
-  void _appendAmount(String numberString){
+  void _appendAmount(String numberString) {
     if (_amount
         .toInt()
         .toString()
@@ -45,9 +45,14 @@ class AddTransactionState extends State<AddTransactionPage> {
     }
   }
 
-  void _deleteAmount(){
-    _amountString =
-        _getAmountString().substring(0, _getAmountString().length - 1);
+  void _deleteAmount() {
+    if (_getAmountString().length > 1) {
+      _amountString =
+          _getAmountString().substring(0, _getAmountString().length - 1);
+      debugPrint("amountstring2: ${_amountString}");
+    } else {
+      _amountString = "0";
+    }
     this._setAmount(double.parse(_getAmountString()));
   }
 
@@ -57,7 +62,7 @@ class AddTransactionState extends State<AddTransactionPage> {
     });
   }
 
-  double _getAmountAsDouble(){
+  double _getAmountAsDouble() {
     return this._amount;
   }
 
@@ -66,7 +71,8 @@ class AddTransactionState extends State<AddTransactionPage> {
   }
 
   void _onNextPressed() {
-    showDialog(context: context,
+    showDialog(
+        context: context,
         builder: (BuildContext context) {
           return AlertDialog(
             title: Text("Amount"),
@@ -87,5 +93,4 @@ class AddTransactionState extends State<AddTransactionPage> {
   void _onBackSpacePressed() {
     _deleteAmount();
   }
-
 }
