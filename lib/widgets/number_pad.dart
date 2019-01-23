@@ -24,12 +24,15 @@ class NumberPad extends StatelessWidget {
           Row(
             children: <Widget>[
               Expanded(
+                key: Key("numberPad1"),
                 child: new NumberButton("1", _onNumber1Pressed),
               ),
               Expanded(
+                key: Key("numberPad2"),
                 child: new NumberButton("2", _onNumber2Pressed),
               ),
               Expanded(
+                key: Key("numberPad3"),
                 child: new NumberButton("3", _onNumber3Pressed),
               ),
             ],
@@ -37,12 +40,15 @@ class NumberPad extends StatelessWidget {
           Row(
             children: <Widget>[
               Expanded(
+                key: Key("numberPad4"),
                 child: new NumberButton("4", _onNumber4Pressed),
               ),
               Expanded(
+                key: Key("numberPad5"),
                 child: new NumberButton("5", _onNumber5Pressed),
               ),
               Expanded(
+                key: Key("numberPad6"),
                 child: new NumberButton("6", _onNumber6Pressed),
               ),
             ],
@@ -50,12 +56,15 @@ class NumberPad extends StatelessWidget {
           Row(
             children: <Widget>[
               Expanded(
+                key: Key("numberPad7"),
                 child: new NumberButton("7", _onNumber7Pressed),
               ),
               Expanded(
+                key: Key("numberPad8"),
                 child: new NumberButton("8", _onNumber8Pressed),
               ),
               Expanded(
+                key: Key("numberPad9"),
                 child: new NumberButton("9", _onNumber9Pressed),
               ),
             ],
@@ -63,12 +72,15 @@ class NumberPad extends StatelessWidget {
           Row(
             children: <Widget>[
               Expanded(
+                key: Key("numberPadClear"),
                 child: new NumberButton("C", _onClearPressed),
               ),
               Expanded(
+                key: Key("numberPad0"),
                 child: new NumberButton("0", _onNumber0Pressed),
               ),
               Expanded(
+                key: Key("numberPadBackSpace"),
                 child:
                 new NumberButton.icon(Icons.backspace, _onBackSpacePressed),
               ),

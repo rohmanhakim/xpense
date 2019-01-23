@@ -17,6 +17,7 @@ class AmountDisplay extends StatelessWidget {
           Expanded(
               child: Text("Rp ${_getAmountString()}",
                   textAlign: TextAlign.center,
+                  textDirection: TextDirection.ltr,
                   style: TextStyle(color: Colors.white, fontSize: 32)))
         ]));
   }
