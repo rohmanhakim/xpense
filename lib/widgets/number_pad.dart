@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:xpense/number_inputs.dart';
 import 'package:xpense/typedefs.dart';
 import 'package:xpense/widgets/number_button.dart';
 
 class NumberPad extends StatelessWidget {
-
   VoidCallback _onClearPressed;
   VoidCallback _onBackSpacePressed;
-  StringCallback _onNumberPressed;
+  InputNumberCallback _onNumberPressed;
 
-  NumberPad(StringCallback onNumberPressed, VoidCallback onClearPressed, VoidCallback onBackSpacePressed){
-    this._onClearPressed = onClearPressed;
-    this._onBackSpacePressed = onBackSpacePressed;
-    this._onNumberPressed = onNumberPressed;
+  NumberPad(NumberPadInputListener listener) {
+    this._onClearPressed = listener.onClearPressed;
+    this._onBackSpacePressed = listener.onBackSpacePressed;
+    this._onNumberPressed = listener.onNumberPressed;
   }
 
   @override
@@ -69,8 +69,8 @@ class NumberPad extends StatelessWidget {
                 child: new NumberButton("0", _onNumber0Pressed),
               ),
               Expanded(
-                child: new NumberButton.icon(
-                    Icons.backspace, _onBackSpacePressed),
+                child:
+                new NumberButton.icon(Icons.backspace, _onBackSpacePressed),
               ),
             ],
           ),
@@ -79,43 +79,51 @@ class NumberPad extends StatelessWidget {
     );
   }
 
-  void _onNumber0Pressed(){
-    _onNumberPressed("0");
+  void _onNumber0Pressed() {
+    _onNumberPressed(NumberInput.input0);
   }
 
-  void _onNumber1Pressed(){
-    _onNumberPressed("1");
+  void _onNumber1Pressed() {
+    _onNumberPressed(NumberInput.input1);
   }
 
-  void _onNumber2Pressed(){
-    _onNumberPressed("2");
+  void _onNumber2Pressed() {
+    _onNumberPressed(NumberInput.input2);
   }
 
-  void _onNumber3Pressed(){
-    _onNumberPressed("3");
+  void _onNumber3Pressed() {
+    _onNumberPressed(NumberInput.input3);
   }
 
-  void _onNumber4Pressed(){
-    _onNumberPressed("4");
+  void _onNumber4Pressed() {
+    _onNumberPressed(NumberInput.input4);
   }
 
-  void _onNumber5Pressed(){
-    _onNumberPressed("5");
+  void _onNumber5Pressed() {
+    _onNumberPressed(NumberInput.input5);
   }
 
-  void _onNumber6Pressed(){
-    _onNumberPressed("6");
+  void _onNumber6Pressed() {
+    _onNumberPressed(NumberInput.input6);
   }
 
-  void _onNumber7Pressed(){
-    _onNumberPressed("7");
+  void _onNumber7Pressed() {
+    _onNumberPressed(NumberInput.input7);
   }
 
-  void _onNumber8Pressed(){
-    _onNumberPressed("8");
+  void _onNumber8Pressed() {
+    _onNumberPressed(NumberInput.input8);
   }
 
-  void _onNumber9Pressed(){
-    _onNumberPressed("9");
+  void _onNumber9Pressed() {
+    _onNumberPressed(NumberInput.input9);
   }
+}
+
+abstract class NumberPadInputListener {
+  void onClearPressed();
+
+  void onBackSpacePressed();
+
+  void onNumberPressed(NumberInput input);
 }
